@@ -48,11 +48,10 @@ class Getter(Resource):
 
 
 # set message
-@ns.route('/setter/<string:payload>',
-          methods=['POST'])
+@ns.route('/setter/<string:payload>')
 @ns.param('payload', 'Greeter message')
 class Setter(Resource):
-    def post(self, payload):
+    def get(self, payload):
         msg = Message()
         return msg.set(payload)
 
